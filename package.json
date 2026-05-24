@@ -1,0 +1,51 @@
+{
+  "name": "figma-react-forge",
+  "version": "0.1.0",
+  "description": "Convert Figma REST JSON or exported node JSON into React components, CSS, and design tokens.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "bin": {
+    "figma-react-forge": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "eslint .",
+    "public-surface": "node scripts/check-public-surface.mjs",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.test.json --noEmit"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "figma",
+    "react",
+    "design-tokens",
+    "typescript",
+    "cli"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "openai": "^6.9.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/node": "^24.10.1",
+    "eslint": "^9.39.1",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.4",
+    "vitest": "^4.0.13"
+  }
+}
