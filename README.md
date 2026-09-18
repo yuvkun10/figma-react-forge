@@ -151,7 +151,7 @@ npm run public-surface
 
 `npm run audit` fails on moderate-or-higher vulnerabilities. `npm run outdated` reports packages where the installed version is behind the registry. CI runs both before lint, typecheck, tests, build, and the public-surface check.
 
-## Codebase Structure
+## Repository map
 
 ```text
 src/
@@ -179,3 +179,7 @@ scripts/              Repo checks for public surface and secret hygiene
 - Rotate Figma personal access tokens regularly and revoke them immediately after suspected exposure.
 - Optional OpenAI cleanup sends generated files to the configured OpenAI API. Keep `--cleanup off` for local-only deterministic generation.
 - `npm run public-surface` checks that private workflow files, env files, common API-key patterns, and attribution markers are not tracked.
+
+## Documentation
+
+- [Architecture diagram source](docs/architecture.mmd)

@@ -1,0 +1,14 @@
+flowchart TD
+    A[Figma file or node JSON] --> B[extractFigmaRoot]
+    B --> C[mapFigmaNode]
+    B --> D[extractDesignTokens]
+    C --> E[render React component]
+    D --> F[render tokens.css]
+    D --> G[write design-tokens.json]
+    E --> H[output directory]
+    F --> H
+    G --> H
+    H --> I{cleanup mode}
+    I -->|off| J[deterministic files]
+    I -->|openai with key| K[optional cleaned files]
+    K --> J
