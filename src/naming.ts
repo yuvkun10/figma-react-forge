@@ -3,7 +3,8 @@ export function slugify(value: string, fallback = "node"): string {
     .trim()
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
-    .replace(/^-+|-+$/g, "");
+    // The previous step leaves at most one hyphen at each end.
+    .replace(/^-|-$/g, "");
 
   return slug.length > 0 ? slug : fallback;
 }
